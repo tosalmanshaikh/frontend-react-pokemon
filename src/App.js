@@ -60,12 +60,16 @@ import PokemonCard from "./assets/components/PokemonCard";
 function App() {
     const [pokemonData, setPokemonData] = useState('');
     const [endPoint, setEndPoint] = useState(`https://pokeapi.co/api/v2/pokemon`); // hier we give the website base as a start reference
+    const [loading, setLoading] = useState(true)
 
 
     //why? useEffect: you tell React that your component needs to do something after render. React will remember the function you passed (we’ll refer to it as our “effect”), and call it later after performing the DOM updates. In this effect, we set the document title, but we could also perform data fetching or call some other imperative API.
     useEffect(() => {
 
         async function fetchData() {
+
+            setLoading(true)
+
             try {
                 // here we mean with (endpoint) our base url as  start point
                 const result = await axios.get(endPoint)
@@ -75,11 +79,13 @@ function App() {
             } catch (e) {
                 console.error(e);
             }
+            setLoading(false)
         }
 
         fetchData()
         console.log("we gaan beginnen :D --> 1");
     }, [endPoint])
+     if (loading) return `loading...`
 
     // start reference point?
     // here we give endpoint as dependency otherwise it will load only the first time and stop after!
@@ -119,98 +125,61 @@ export default App;
 
 
 
+//m
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//hoe kunnen we dit voor alle 20?
-
-// import React, {useEffect, useState} from 'react';
+// import React, {useState, useEffect} from 'react';
 // import './App.css';
-// import axios from "axios";
-// import Button from "./assets/components/button";
+// import axios from 'axios';
 // import PokemonCard from "./assets/components/PokemonCard";
 //
 // function App() {
 //
-//     const [pokemonData, setPokemonData] = useState('');
-//     const [endPoint, setEndPoint] = useState('https://pokeapi.co/api/v2/pokemon/')
-//     const [counter, setCounter] = useState(0);
-//
+//     const [pokemonData, setPokemonData] = useState([]);
+//     const [loading, setLoading] = useState(true)
+//     const [counter, setCounter] = useState('https://pokeapi.co/api/v2/pokemon');
 //
 //     useEffect(() => {
 //
 //         async function fetchData() {
+//             setLoading(true)
 //             try {
-//                 const input = await axios.get(endPoint);
-//                 console.log(input.data.results);
-//                 setPokemonData(input.data.results)
+//                 const {data} = await axios.get(counter);
+//                 setPokemonData(data)
+//                 console.log(data)
 //             } catch (e) {
 //                 console.error(e);
 //             }
+//             setLoading(false)
 //         }
 //
 //         fetchData()
-//         console.log("we gaan beginnen :)")
-//     }, [])
-//
+//     }, [counter])
+//     if (loading) return `loading...`
 //
 //     return (
-//         <div>
+//         <>
 //
+//             <button disabled={!pokemonData.previous} type="button"
+//                     onClick={() => setCounter(pokemonData.previous)}> vorige </button>
 //
-//             {pokemonData.results.map((pokemon) => {
-//                 return (
+//             <button disabled={!pokemonData.next} type="button"
+//                     onClick={() => setCounter(pokemonData.next)}> volgende </button>
 //
-//                     <li>
-//                         {pokemon.name}
-//                     </li>
-//                 )
-//
+//             {pokemonData.results.map((item) => {
+//                 return <PokemonCard url={item.url}
+//                                 key={item.name}
+//                 />
 //             })}
 //
-//             <PokemonCard endPoint={endPoint}/>
+//             <button disabled={!pokemonData.previous} type="button"
+//                     onClick={() => setCounter(pokemonData.previous)}> vorige </button>
 //
-//             {/*<Button isDisabled={true} type="button"*/}
-//             {/*        clickHandler={() => setCounter(pokemonData.previous)}> vorige </Button>*/}
-//             {/*<Button isDisabled={false} type="button"*/}
-//             {/*        clickHandler={() => setCounter(pokemonData.next)}> volgende </Button>*/}
+//             <button disabled={!pokemonData.next} type="button"
+//                     onClick={() => setCounter(pokemonData.next)}> volgende </button>
 //
-//         </div>
+//
+//         </>
 //     );
 // }
-
+//
 // export default App;
-
-

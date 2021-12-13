@@ -2,11 +2,10 @@
 
     background-color: #eed060;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px 10px 10px 10px;
-    margin: 15px 15px 15px 15px;
-    column-count: 5;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 
 }
 
@@ -14,14 +13,98 @@
 .pokemon-data-2 {
 
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px 5px;
 
 }
+
+.PokemonCards {
+    border: 2px solid #faac5e;
+    padding: 0vh 6vh;
+    height: 36vw;
+    width: 10vw;
+    margin: 2vh;
+    background: #f5c254;
+    border-radius: 3vh;
+    list-style: none;
+}
+
 
 .buttons {
 
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 15px 15px 15px 5px;
+
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c3d9bc;
+    font-family: "Arial", sans-serif;
+}
+
+button {
+    border: 2px solid black;
+    background: #fa9c5d;
+    padding: 2vh;
+    margin-left: 1vh;
+    width: 15vh;
+    color: navajowhite;
+    border-radius: 50px;
 }
 
 
+
+
+
+/*// m */
+
+/*body {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background: blue;*/
+/*    font-family: "Arial", sans-serif;*/
+/*}*/
+
+/*.Pokemon-module {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    flex-wrap: wrap;*/
+/*    padding: 5vh 5vh;*/
+/*}*/
+
+/*.PokemonCards {*/
+/*    border: 3px solid black;*/
+/*    padding: 0vh 6vh;*/
+/*    height: 36vw;*/
+/*    width: 10vw;*/
+/*    margin: 2vh;*/
+/*    background: yellow;*/
+/*    border-radius: 3vh;*/
+/*}*/
+
+/*.buttons {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    margin-top: 4vh;*/
+/*    margin-bottom: -3vh;*/
+/*}*/
+/*button {*/
+/*    border: 2px solid black;*/
+/*    background: red;*/
+/*    padding: 2vh;*/
+/*    margin-left: 1vh;*/
+/*    width: 15vh;*/
+/*}*/
