@@ -1,0 +1,27 @@
+.pokemon-data-1 {
+
+    background-color: #eed060;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 10px 10px 10px;
+    margin: 15px 15px 15px 15px;
+    column-count: 5;
+
+}
+
+
+.pokemon-data-2 {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.buttons {
+
+    display: flex;
+    justify-content: center;
+}
+
+
